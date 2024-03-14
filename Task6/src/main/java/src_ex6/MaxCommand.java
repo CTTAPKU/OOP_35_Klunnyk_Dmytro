@@ -56,6 +56,8 @@ public class MaxCommand implements Command /*, Runnable */ {
 
         System.out.println("Max in #" + (result + 1) + " found: " + Arrays.toString(viewResult.getItems().get(result).getRes()));
 
+        progress = 100;
+
     }
 
 }
