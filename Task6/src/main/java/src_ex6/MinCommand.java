@@ -55,6 +55,8 @@ public class MinCommand implements Command {
         }
 
         System.out.println("Min in #" +(result + 1)+ " found: " + Arrays.toString(viewResult.getItems().get(result).getRes()));
+
+        progress = 100;
     }
 
 }
