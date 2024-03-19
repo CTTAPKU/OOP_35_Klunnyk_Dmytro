@@ -17,6 +17,8 @@ public class ViewResult implements View {
 
     private static final String FNAME = "items.bin";
 
+    private static final String UNAME = "undo.bin";
+
     private static final int DEFAUL_NUM = 5;
 
     private ArrayList<item> items = new ArrayList<item>();
@@ -72,7 +74,18 @@ public class ViewResult implements View {
 
     @Override
     public void viewInit() {
+         try {
+            undosave();
+        } catch (IOException ex) {
+        }
         init();
+    }
+
+    public void undosave() throws IOException {
+        ObjectOutputStream us = new ObjectOutputStream(new FileOutputStream(UNAME));
+        us.writeObject(items);
+        us.flush();
+        us.close();
     }
 
     @Override
@@ -85,6 +98,7 @@ public class ViewResult implements View {
 
     @Override
     public void viewRestore() throws Exception {
+        undosave();
         ObjectInputStream is = new ObjectInputStream(new FileInputStream(FNAME));
         items = (ArrayList<item>) is.readObject();
         is.close();
