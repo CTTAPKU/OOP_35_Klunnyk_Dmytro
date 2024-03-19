@@ -9,7 +9,7 @@ import src_ex3.View;
 
 /**
  *
- * @author cttar
+ * @author Klunnuk Dmytro
  */
 public class UndoCommand {
 
