@@ -4,7 +4,7 @@ import src_ex3.View;
 
 /**
  *
- * @author cttar
+ * @author Klunnyk Dmytro
  */
 public class UndoConsoleCommand implements ConsoleCommand {
 
